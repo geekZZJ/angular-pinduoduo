@@ -6,5 +6,8 @@
       (click)="handleSelect(i)"
       >{{ menu.title }}</a
     >
+    <span class="indicator" *ngIf="i === selectedIndex"></span>
+    <!-- <span *ngIf="i === selectedIndex; else elseTemp"></span>
+    <ng-template #elseTemp></ng-template> -->
   </li>
 </ul>

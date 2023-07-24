@@ -1,1 +1,4 @@
-<app-scroll-tab></app-scroll-tab>
+<app-scroll-tab
+  [menus]="menus"
+  (tabSelected)="handleSelect($event)"
+></app-scroll-tab>

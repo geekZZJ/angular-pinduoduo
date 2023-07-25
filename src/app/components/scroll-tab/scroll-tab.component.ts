@@ -1,5 +1,6 @@
 import {
   Component,
+  DoCheck,
   EventEmitter,
   Input,
   OnChanges,
@@ -17,7 +18,7 @@ export interface TopMenu {
   templateUrl: './scroll-tab.component.html',
   styleUrls: ['./scroll-tab.component.css'],
 })
-export class ScrollTabComponent implements OnChanges {
+export class ScrollTabComponent implements OnChanges, DoCheck {
   @Input() menus: TopMenu[];
   @Input() titleActiveColor: string = 'brown';
   @Input() titleColor: string = 'blue';
@@ -30,6 +31,10 @@ export class ScrollTabComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('组件输入属性变化', changes);
+  }
+
+  ngDoCheck(): void {
+    console.log('脏值检测');
   }
 
   handleSelect(i: number) {

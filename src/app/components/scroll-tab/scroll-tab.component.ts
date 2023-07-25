@@ -12,6 +12,10 @@ export interface TopMenu {
 })
 export class ScrollTabComponent {
   @Input() menus: TopMenu[];
+  @Input() titleActiveColor: string = 'brown';
+  @Input() titleColor: string = 'blue';
+  @Input() backgroundColor: string = '#fff';
+  @Input() indicatorColor: string = 'brown';
   @Output() tabSelected = new EventEmitter<TopMenu>();
   selectedIndex = -1;
 

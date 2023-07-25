@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 
 export interface TopMenu {
   title: string;
@@ -10,7 +17,7 @@ export interface TopMenu {
   templateUrl: './scroll-tab.component.html',
   styleUrls: ['./scroll-tab.component.css'],
 })
-export class ScrollTabComponent {
+export class ScrollTabComponent implements OnChanges {
   @Input() menus: TopMenu[];
   @Input() titleActiveColor: string = 'brown';
   @Input() titleColor: string = 'blue';
@@ -20,6 +27,10 @@ export class ScrollTabComponent {
   selectedIndex = -1;
 
   constructor() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('组件输入属性变化', changes);
+  }
 
   handleSelect(i: number) {
     this.selectedIndex = i;

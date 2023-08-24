@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TopMenu } from './components';
+import { ImageSlider, TopMenu } from './components';
 
 @Component({
   selector: 'app-root',
@@ -71,6 +71,23 @@ export class AppComponent {
     {
       title: '美妆',
       link: '',
+    },
+  ];
+  imageSliders: ImageSlider[] = [
+    {
+      imgUrl: 'http://blog.zhangblog.cn/logo.png',
+      link: '',
+      caption: '',
+    },
+    {
+      imgUrl: 'http://blog.zhangblog.cn/logo.png',
+      link: '',
+      caption: '',
+    },
+    {
+      imgUrl: 'http://blog.zhangblog.cn/logo.png',
+      link: '',
+      caption: '',
     },
   ];
 

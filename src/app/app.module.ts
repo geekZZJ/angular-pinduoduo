@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ScrollTabComponent } from './components';
+import { ScrollTabComponent, ImageSliderComponent } from './components';
 
 @NgModule({
-  declarations: [AppComponent, ScrollTabComponent],
+  declarations: [AppComponent, ScrollTabComponent, ImageSliderComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

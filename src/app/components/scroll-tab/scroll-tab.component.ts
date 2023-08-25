@@ -47,40 +47,40 @@ export class ScrollTabComponent
 
   // 组件销毁
   ngOnDestroy(): void {
-    console.log('组件销毁');
+    // console.log('组件销毁');
   }
 
   // 组件视图脏值检测
   ngAfterViewChecked(): void {
-    console.log('组件视图脏值检测');
+    // console.log('组件视图脏值检测');
   }
 
   // 组件初始化
   ngOnInit(): void {
-    console.log('组件初始化');
+    // console.log('组件初始化');
   }
 
   // 视图初始化完成
   ngAfterViewInit(): void {
-    console.log('视图初始化完成');
+    // console.log('视图初始化完成');
   }
 
   // 插槽内容脏值检测
   ngAfterContentChecked(): void {
-    console.log('插槽内容脏值检测');
+    // console.log('插槽内容脏值检测');
   }
 
   // 插槽内容初始化
   ngAfterContentInit(): void {
-    console.log('插槽内容初始化');
+    // console.log('插槽内容初始化');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('组件输入属性变化', changes);
+    // console.log('组件输入属性变化', changes);
   }
 
   ngDoCheck(): void {
-    console.log('脏值检测');
+    // console.log('脏值检测');
   }
 
   handleSelect(i: number) {

@@ -1,6 +1,6 @@
 <div class="container" #imageSlider>
   <div class="image-slider">
-    <img *ngFor="let slider of sliders" [src]="slider.imgUrl" [alt]="slider.caption">
+    <img #img *ngFor="let slider of sliders" [src]="slider.imgUrl" [alt]="slider.caption">
   </div>
   <div class="nav-section">
     <span class="slide-button" *ngFor="let slider of sliders;let idx=index"></span>

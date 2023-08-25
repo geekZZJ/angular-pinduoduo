@@ -1,4 +1,13 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  AfterViewInit,
+} from '@angular/core';
 
 export interface ImageSlider {
   imgUrl: string;
@@ -11,11 +20,15 @@ export interface ImageSlider {
   templateUrl: './image-slider.component.html',
   styleUrls: ['./image-slider.component.css'],
 })
-export class ImageSliderComponent implements OnInit {
+export class ImageSliderComponent implements OnInit, AfterViewInit {
   @ViewChild('imageSlider', { static: true }) imageSlider: ElementRef;
+  @ViewChildren('img') imgs: QueryList<ElementRef>;
   @Input() sliders: ImageSlider[] = [];
 
   constructor() {}
+  ngAfterViewInit(): void {
+    console.log('222', this.imgs);
+  }
 
   ngOnInit() {
     console.log('1111', this.imageSlider);

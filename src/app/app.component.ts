@@ -75,17 +75,17 @@ export class AppComponent {
   ];
   imageSliders: ImageSlider[] = [
     {
-      imgUrl: 'http://blog.zhangblog.cn/logo.png',
+      imgUrl: 'http://zhangblog.cn:7001/public/banner/banner1.jpg',
       link: '',
       caption: '',
     },
     {
-      imgUrl: 'http://blog.zhangblog.cn/logo.png',
+      imgUrl: 'http://zhangblog.cn:7001/public/banner/banner2.jpg',
       link: '',
       caption: '',
     },
     {
-      imgUrl: 'http://blog.zhangblog.cn/logo.png',
+      imgUrl: 'http://zhangblog.cn:7001/public/banner/banner3.jpg',
       link: '',
       caption: '',
     },

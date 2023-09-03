@@ -23,18 +23,24 @@ export interface ImageSlider {
 })
 export class ImageSliderComponent implements OnInit, AfterViewInit {
   @ViewChild('imageSlider', { static: true }) imageSlider: ElementRef;
-  @ViewChildren('img') imgs: QueryList<ElementRef>;
+  // @ViewChildren('img') imgs: QueryList<ElementRef>;
   @Input() sliders: ImageSlider[] = [];
-  @Input() sliderHeight = '160px';
+  @Input() sliderHeight = 'auto';
+  @Input() intervalTime = 2;
 
   constructor(private rd2: Renderer2) {}
   ngAfterViewInit(): void {
-    // this.imgs.forEach((item) => {
-    //   this.rd2.setStyle(item.nativeElement, 'height', '100px');
-    // });
+    let i = 0;
+    setInterval(() => {
+      this.rd2.setProperty(
+        this.imageSlider.nativeElement,
+        'scrollLeft',
+        ((++i % this.sliders.length) *
+          this.imageSlider.nativeElement.scrollWidth) /
+          this.sliders.length
+      );
+    }, this.intervalTime * 1000);
   }
 
-  ngOnInit() {
-    // console.log('1111', this.imageSlider);
-  }
+  ngOnInit() {}
 }

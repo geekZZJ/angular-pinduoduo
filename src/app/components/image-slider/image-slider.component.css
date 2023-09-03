@@ -8,6 +8,7 @@
   overflow-x: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .container img {
@@ -39,4 +40,8 @@
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.nav-section .slide-button-select {
+  background-color: #e02f29;
 }

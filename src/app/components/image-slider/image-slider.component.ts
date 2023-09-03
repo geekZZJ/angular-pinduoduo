@@ -8,6 +8,7 @@ import {
   ViewChildren,
   AfterViewInit,
   Renderer2,
+  OnDestroy,
 } from '@angular/core';
 
 export interface ImageSlider {
@@ -21,21 +22,23 @@ export interface ImageSlider {
   templateUrl: './image-slider.component.html',
   styleUrls: ['./image-slider.component.css'],
 })
-export class ImageSliderComponent implements OnInit, AfterViewInit {
+export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('imageSlider', { static: true }) imageSlider: ElementRef;
   // @ViewChildren('img') imgs: QueryList<ElementRef>;
   @Input() sliders: ImageSlider[] = [];
   @Input() sliderHeight = 'auto';
   @Input() intervalTime = 2;
+  selectIndex = 0;
+  intervalId: any;
 
   constructor(private rd2: Renderer2) {}
+
   ngAfterViewInit(): void {
-    let i = 0;
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.rd2.setProperty(
         this.imageSlider.nativeElement,
         'scrollLeft',
-        ((++i % this.sliders.length) *
+        (this.getIndex(++this.selectIndex) *
           this.imageSlider.nativeElement.scrollWidth) /
           this.sliders.length
       );
@@ -43,4 +46,21 @@ export class ImageSliderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {}
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
+  }
+
+  getIndex(idx: number): number {
+    return idx >= 0
+      ? idx % this.sliders.length
+      : this.sliders.length - (Math.abs(idx) % this.sliders.length);
+  }
+
+  handleScroll(event: any) {
+    const ratio =
+      event.target.scrollLeft /
+      (event.target.scrollWidth / this.sliders.length);
+    this.selectIndex = Math.round(ratio);
+  }
 }

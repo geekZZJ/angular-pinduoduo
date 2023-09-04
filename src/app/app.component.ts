@@ -90,6 +90,7 @@ export class AppComponent {
       caption: '',
     },
   ];
+  username = '111';
 
   handleSelect(item: TopMenu) {
     console.log(item);

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-horizontal-grid',
@@ -13,6 +13,7 @@ export class HorizontalGridComponent implements OnInit {
 
   ngOnInit() {}
 
+  @Input()
   public get username(): string {
     return this._username;
   }

@@ -1,5 +1,1 @@
-<!-- 指令所在的元素叫宿主 -->
-<div appGridItem *ngFor="let item of channels">
-  <img [src]="item.img" alt="" [appGridItemImage]="'4rem'">
-  <span appGridItemTitle>{{item.title}}</span>
-</div>
+<ng-content select="span"></ng-content>

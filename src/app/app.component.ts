@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { ImageSlider, TopMenu } from './shared/components';
+interface Channel {
+  id: number;
+  img: string;
+  title: string;
+  link: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -90,7 +96,33 @@ export class AppComponent {
       caption: '',
     },
   ];
-  username = '111';
+  // username = '111';
+  channels: Channel[] = [
+    {
+      id: 1,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
+    {
+      id: 2,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
+    {
+      id: 3,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
+    {
+      id: 4,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
+  ];
 
   handleSelect(item: TopMenu) {
     console.log(item);

@@ -122,6 +122,36 @@ export class AppComponent {
       title: '限时秒杀',
       link: '',
     },
+    {
+      id: 5,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
+    {
+      id: 6,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
+    {
+      id: 7,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
+    {
+      id: 8,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
+    {
+      id: 9,
+      img: 'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      title: '限时秒杀',
+      link: '',
+    },
   ];
 
   handleSelect(item: TopMenu) {

@@ -18,7 +18,6 @@ import {
     ImageSliderComponent,
     HorizontalGridComponent,
     GridItemDirective,
-    GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
   ],
@@ -30,6 +29,8 @@ import {
     ImageSliderComponent,
     HorizontalGridComponent,
     GridItemDirective,
+    GridItemImageDirective,
+    GridItemTitleDirective,
   ],
 })
 export class SharedModule {}

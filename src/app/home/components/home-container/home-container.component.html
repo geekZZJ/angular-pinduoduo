@@ -1,0 +1,11 @@
+<app-scroll-tab [menus]="menus" (tabSelected)="handleSelect($event)" backgroundColor="red" titleColor="#fff"
+  titleActiveColor="yellow" indicatorColor="yellow"></app-scroll-tab>
+<app-image-slider [sliders]="imageSliders"></app-image-slider>
+<!-- <app-horizontal-grid [(username)]="username"></app-horizontal-grid> -->
+<app-horizontal-grid>
+  <!-- 指令所在的元素叫宿主 -->
+  <span appGridItem *ngFor="let item of channels">
+    <img [src]="item.img" alt="" appGridItemImage appGridItemImageSize="2rem">
+    <span appGridItemTitle appGridItemTitleFont="0.6rem">{{item.title}}</span>
+  </span>
+</app-horizontal-grid>

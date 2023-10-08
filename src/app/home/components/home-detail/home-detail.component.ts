@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 interface Channel {
   id: number;
@@ -69,8 +70,17 @@ export class HomeDetailComponent implements OnInit {
       link: '',
     },
   ];
+  tabLink: string | null;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.paramMap.subscribe((res) => {
+      console.log('路径参数', res);
+      this.tabLink = res.get('tabLink');
+    });
+    this.route.queryParamMap.subscribe((res) => {
+      console.log('查询参数', res);
+    });
+  }
 }

@@ -5,9 +5,9 @@ import localZh from '@angular/common/locales/zh-Hans';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home';
+import { HomeModule, NotificationInterceptor, ParamInterceptor } from './home';
 import { registerLocaleData } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +22,16 @@ import { HttpClientModule } from '@angular/common/http';
     {
       provide: LOCALE_ID,
       useValue: 'zh-Hans',
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ParamInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: NotificationInterceptor,
+      multi: true,
     },
   ],
   bootstrap: [AppComponent],

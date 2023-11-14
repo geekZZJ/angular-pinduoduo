@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ImageSlider, TopMenu } from 'src/app/shared/components';
 
@@ -163,13 +164,18 @@ export class HomeService {
     },
   ];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getTabs() {
     return this.menus;
   }
 
   getChannels() {
+    this.http
+      .get<Channel[]>('http://zhangblog.cn:7001/recommend/banner')
+      .subscribe((res) => {
+        console.log('1111', res);
+      });
     return this.channels;
   }
 

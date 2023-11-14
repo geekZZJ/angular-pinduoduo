@@ -3,6 +3,7 @@ import {
   AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   DoCheck,
   EventEmitter,
@@ -24,6 +25,7 @@ export interface TopMenu {
   selector: 'app-scroll-tab',
   templateUrl: './scroll-tab.component.html',
   styleUrls: ['./scroll-tab.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ScrollTabComponent
   implements

@@ -179,6 +179,12 @@ export class HomeService {
     return this.channels;
   }
 
+  _getChannels() {
+    return this.http.get<Channel[]>(
+      'http://zhangblog.cn:7001/recommend/banner'
+    );
+  }
+
   getBanners() {
     return this.imageSliders;
   }

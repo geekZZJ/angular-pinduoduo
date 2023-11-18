@@ -5,6 +5,7 @@ import {
   HorizontalGridComponent,
   ImageSliderComponent,
   ScrollTabComponent,
+  CountDownComponent,
 } from './components';
 import {
   GridItemDirective,
@@ -18,6 +19,7 @@ import { AgoPipe } from './pipes';
     ScrollTabComponent,
     ImageSliderComponent,
     HorizontalGridComponent,
+    CountDownComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
@@ -29,6 +31,7 @@ import { AgoPipe } from './pipes';
     FormsModule,
     ScrollTabComponent,
     ImageSliderComponent,
+    CountDownComponent,
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,

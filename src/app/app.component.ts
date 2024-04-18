@@ -9,19 +9,18 @@ import { NavigationEnd, Router, Event } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  selectedIndex$: Observable<number>;
+  selectedIndex: number;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.selectedIndex$ = this.router.events.pipe(
-      filter((ev: Event) => ev instanceof NavigationEnd),
-      map((ev: NavigationEnd) => {
-        const arr = ev.url.split('/');
-        return arr.length > 1 ? arr[1] : 'home';
-      }),
-      map((tab) => this.getSelectedIndex(tab))
-    );
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const arr = event.url.split('/');
+        const tab = arr.length > 1 ? arr[1] : 'home';
+        this.selectedIndex = this.getSelectedIndex(tab);
+      }
+    });
   }
 
   handleTabSelect(tab: TabItem) {

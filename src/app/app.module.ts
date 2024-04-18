@@ -8,6 +8,8 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule, NotificationInterceptor, ParamInterceptor } from './home';
 import { registerLocaleData } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { RecommendModule } from './recommend/recommend.module';
+import { MyModule } from './my/my.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +19,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     SharedModule,
     HomeModule,
     HttpClientModule,
+    RecommendModule,
+    MyModule,
   ],
   providers: [
     {

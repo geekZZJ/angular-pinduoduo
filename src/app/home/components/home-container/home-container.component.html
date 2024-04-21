@@ -1,5 +1,12 @@
-<app-scroll-tab [menus]="menus" (tabSelected)="handleTabSelect($event)" backgroundColor="red" titleColor="#fff"
-  titleActiveColor="yellow" indicatorColor="yellow"></app-scroll-tab>
+<app-scroll-tab
+  [menus]="menus"
+  (tabSelected)="handleTabSelect($event)"
+  backgroundColor="red"
+  titleColor="#fff"
+  titleActiveColor="yellow"
+  indicatorColor="yellow"
+  [selectedTabLink]="selectedTabLink"
+></app-scroll-tab>
 <app-image-slider [sliders]="imageSliders"></app-image-slider>
 <!-- <app-horizontal-grid [(username)]="username"></app-horizontal-grid> -->
 <router-outlet></router-outlet>

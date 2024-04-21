@@ -43,8 +43,8 @@ export class ScrollTabComponent
   @Input() titleColor: string = 'blue';
   @Input() backgroundColor: string = '#fff';
   @Input() indicatorColor: string = 'brown';
+  @Input() selectedTabLink: string;
   @Output() tabSelected = new EventEmitter<TopMenu>();
-  selectedIndex = -1;
 
   constructor() {}
 
@@ -86,9 +86,8 @@ export class ScrollTabComponent
     // console.log('脏值检测');
   }
 
-  handleSelect(i: number) {
-    this.selectedIndex = i;
-    this.tabSelected.emit(this.menus[this.selectedIndex]);
+  handleSelect(index: number) {
+    this.tabSelected.emit(this.menus[index]);
   }
 
   trackByItem(_: number, item: TopMenu) {

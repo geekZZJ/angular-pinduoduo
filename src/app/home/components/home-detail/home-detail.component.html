@@ -17,6 +17,14 @@
 <div class="ad-container" *ngIf="ad">
   <img [src]="ad.imageUrl" alt="" class="ad-image" />
 </div>
+<app-vertical-grid itemWidth="20rem" itemHeight="2rem">
+  <!-- <app-product-card
+    *ngFor="let product of products"
+    [product]="product"
+    [routerLink]="['/products', product.id]"
+  >
+  </app-product-card> -->
+</app-vertical-grid>
 <!-- <a [routerLink]="['grand']">link to grand</a> -->
 <!-- <a [routerLink]="['grand']" routerLinkActive="active" [queryParams]="{name:'zhangsan'}">link to grand</a>
 <a [routerLink]="[{outlets:{second:['aux']}}]">link to grand</a>

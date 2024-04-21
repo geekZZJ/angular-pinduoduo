@@ -7,6 +7,7 @@ import {
   ScrollTabComponent,
   CountDownComponent,
   FooterComponent,
+  VerticalGridComponent,
 } from './components';
 import {
   GridItemDirective,
@@ -26,6 +27,7 @@ import { AgoPipe } from './pipes';
     GridItemTitleDirective,
     AgoPipe,
     FooterComponent,
+    VerticalGridComponent,
   ],
   imports: [CommonModule, FormsModule],
   exports: [
@@ -40,6 +42,7 @@ import { AgoPipe } from './pipes';
     GridItemTitleDirective,
     AgoPipe,
     FooterComponent,
+    VerticalGridComponent,
   ],
 })
 export class SharedModule {}

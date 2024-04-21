@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Channel, HomeService } from '../services';
 import { Observable, Subscription, filter, map } from 'rxjs';
-import { Ad } from 'src/app/shared/domain';
+import { Ad, Product } from 'src/app/shared/domain';
 
 @Component({
   selector: 'app-home-detail',
@@ -15,6 +15,7 @@ export class HomeDetailComponent implements OnInit, OnDestroy {
   tabLink: string;
   sub: Subscription;
   ad: Ad;
+  products: Product[];
 
   constructor(
     private route: ActivatedRoute,
@@ -41,5 +42,9 @@ export class HomeDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+  }
+
+  getProducts() {
+    this.products = this.homeService.getProductsByTab(this.tabLink);
   }
 }

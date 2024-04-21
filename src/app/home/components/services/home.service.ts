@@ -165,7 +165,13 @@ export class HomeService {
     },
   ];
 
-  ads: Ad[] = [];
+  ads: Ad[] = [
+    {
+      imageUrl:
+        'https://qpic.y.qq.com/music_cover/xiabfMZAmQ0PYUzgCvOicArIoGLzqL3n6q3fDiawWkhTTVWgGNM52HBNA/300?n=1',
+      link: '',
+    },
+  ];
 
   products: Product[] = [];
 

@@ -8,11 +8,14 @@ import {
   CountDownComponent,
   FooterComponent,
   VerticalGridComponent,
+  ProductCardComponent,
 } from './components';
 import {
+  AvatarDirective,
   GridItemDirective,
   GridItemImageDirective,
   GridItemTitleDirective,
+  TagDirective,
 } from './directives';
 import { AgoPipe } from './pipes';
 
@@ -25,9 +28,12 @@ import { AgoPipe } from './pipes';
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
+    AvatarDirective,
+    TagDirective,
     AgoPipe,
     FooterComponent,
     VerticalGridComponent,
+    ProductCardComponent,
   ],
   imports: [CommonModule, FormsModule],
   exports: [
@@ -40,9 +46,12 @@ import { AgoPipe } from './pipes';
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
+    TagDirective,
+    AvatarDirective,
     AgoPipe,
     FooterComponent,
     VerticalGridComponent,
+    ProductCardComponent,
   ],
 })
 export class SharedModule {}

@@ -1,4 +1,4 @@
-<div *ngIf="tabLink === 'hot'; else other">
+<ng-container *ngIf="tabLink === 'hot'">
   <app-horizontal-grid>
     <!-- 指令所在的元素叫宿主 -->
     <span appGridItem *ngFor="let item of channels">
@@ -13,8 +13,10 @@
       }}</span>
     </span>
   </app-horizontal-grid>
+</ng-container>
+<div class="ad-container" *ngIf="ad">
+  <img [src]="ad.imageUrl" alt="" class="ad-image" />
 </div>
-<ng-template #other> 11111 </ng-template>
 <!-- <a [routerLink]="['grand']">link to grand</a> -->
 <!-- <a [routerLink]="['grand']" routerLinkActive="active" [queryParams]="{name:'zhangsan'}">link to grand</a>
 <a [routerLink]="[{outlets:{second:['aux']}}]">link to grand</a>

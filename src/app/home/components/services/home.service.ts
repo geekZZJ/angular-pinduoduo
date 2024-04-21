@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ImageSlider, TopMenu } from 'src/app/shared/components';
+import { Ad } from 'src/app/shared/domain';
 
 @Injectable({
   providedIn: 'root',
@@ -164,6 +165,8 @@ export class HomeService {
     },
   ];
 
+  ads: Ad[] = [];
+
   constructor(private http: HttpClient) {}
 
   getTabs() {
@@ -187,6 +190,10 @@ export class HomeService {
 
   getBanners() {
     return this.imageSliders;
+  }
+
+  getAdByTab(tab: string) {
+    return this.ads;
   }
 }
 

@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Channel, HomeService } from '../services';
 import { Observable, Subscription, filter, map } from 'rxjs';
+import { Ad } from 'src/app/shared/domain';
 
 @Component({
   selector: 'app-home-detail',
@@ -11,8 +12,9 @@ import { Observable, Subscription, filter, map } from 'rxjs';
 export class HomeDetailComponent implements OnInit, OnDestroy {
   channels: Channel[] = [];
   channels$: Observable<Channel[]>;
-  tabLink: string | null;
+  tabLink: string;
   sub: Subscription;
+  ad: Ad;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,13 +29,14 @@ export class HomeDetailComponent implements OnInit, OnDestroy {
       )
       .subscribe((tabLink) => {
         console.log('路径参数', tabLink);
-        this.tabLink = tabLink;
+        this.tabLink = tabLink || '';
       });
     this.sub = this.route.queryParamMap.subscribe((res) => {
       console.log('查询参数', res);
     });
     // this.channels = this.homeService.getChannels();
     this.channels$ = this.homeService._getChannels();
+    this.ad = this.homeService.getAdByTab(this.tabLink)[0];
   }
 
   ngOnDestroy(): void {

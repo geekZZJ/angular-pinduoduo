@@ -38,6 +38,7 @@ export class HomeDetailComponent implements OnInit, OnDestroy {
     // this.channels = this.homeService.getChannels();
     this.channels$ = this.homeService._getChannels();
     this.ad = this.homeService.getAdByTab(this.tabLink)[0];
+    this.getProducts()
   }
 
   ngOnDestroy(): void {

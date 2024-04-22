@@ -9,6 +9,7 @@ import {
   FooterComponent,
   VerticalGridComponent,
   ProductCardComponent,
+  ProductTileComponent,
 } from './components';
 import {
   AvatarDirective,
@@ -34,6 +35,7 @@ import { AgoPipe } from './pipes';
     FooterComponent,
     VerticalGridComponent,
     ProductCardComponent,
+    ProductTileComponent,
   ],
   imports: [CommonModule, FormsModule],
   exports: [
@@ -52,6 +54,7 @@ import { AgoPipe } from './pipes';
     FooterComponent,
     VerticalGridComponent,
     ProductCardComponent,
+    ProductTileComponent,
   ],
 })
 export class SharedModule {}
